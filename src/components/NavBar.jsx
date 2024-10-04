@@ -8,9 +8,10 @@ export const NavBar = () => {
     <nav>
         <img class="logo-verde" src={logoVerde} alt="Logo Principal" />
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li>Plantas</li>
+            <li>Macetas</li>
+            <li>Servicio y Asesoría</li>
+            <li>Contacto</li>
         </ul>
         <CartWidget></CartWidget>
     </nav>

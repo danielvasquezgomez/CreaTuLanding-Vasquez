@@ -3,7 +3,7 @@ import "./CartWidget.css";
 
 
 export const CartWidget = () => {
-    const itemCount = 5; // Valor estático para la notificación. Provisional hasta proximas entregas
+    const itemCount = 3; // Valor estático para la notificación. Provisional hasta proximas entregas
   return (
     <div className="cart-container">
       <img src={cart} alt="Cart" className="cart-icon" />
