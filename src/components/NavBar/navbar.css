@@ -1,0 +1,37 @@
+nav {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #0B3817;
+  border-radius: 50px;
+  color: white;
+  padding: 5px 35px; 
+}
+
+.logo-verde {
+  width: 80px;
+}
+
+ul {
+  padding: 0px;
+  list-style-type: none;
+  margin: 0;
+  display: flex; 
+  justify-content: center; 
+  flex-grow: 1; 
+}
+
+ul li {
+  margin: 0 10px; 
+}
+
+ul a {
+  color: white;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+ul a:hover {
+  color: #BAEF49;
+}

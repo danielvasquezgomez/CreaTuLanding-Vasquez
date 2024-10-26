@@ -1,0 +1,33 @@
+
+.Controls{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Number{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+
+Button{
+    background-color: #004D29;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+Button:hover {
+    background-color: #C1FF72; 
+    color: black;
+}
