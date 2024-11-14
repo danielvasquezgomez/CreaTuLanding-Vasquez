@@ -1,14 +1,14 @@
-import { CartWidget } from "./CartWidget"
+import CartWidget from "./CartWidget"
 import "./navbar.css"
 import logoVerde from "../../assets/navbar/logoVerde.png"
 import { Link } from "react-router-dom"
 
-export const NavBar = () => {
+const NavBar = () => {
   return (
     <>
     <nav>
         <Link to='/'>
-          <img class="logo-verde" src={logoVerde} alt="Logo Principal" />
+          <img className="logo-verde" src={logoVerde} alt="Logo Principal" />
         </Link>
           
         <ul>
@@ -28,3 +28,5 @@ export const NavBar = () => {
     </>
   )
 }
+
+export default NavBar

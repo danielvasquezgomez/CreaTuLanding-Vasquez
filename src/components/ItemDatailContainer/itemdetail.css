@@ -4,7 +4,7 @@
     width: 100%;
     min-height: 90vh;
     padding: 50px 0;
-    background-color: #0B3817;
+    background-color: whitesmoke;
     border-radius: 50px;
     margin-top: 30px;
   }
@@ -49,14 +49,14 @@
 
   .title-detail{
     font-size: 3rem;
-    color: white;
+    color: #B9ED49;
   }
 
   .text-detail{
     font-style: italic;
     padding: 10px 0;
     font-size: 1.3rem;
-    color: rgb(161, 160, 160);
+    color: black;
     
   }
 
@@ -65,5 +65,5 @@
   }
 
   .text-descrip{
-    color: white;
+    color: black;
   }

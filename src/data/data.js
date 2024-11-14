@@ -4,7 +4,7 @@ const products = [
         name: "Ficus Rubi",
         description: "",
         price: "35000",
-        stock: "25",
+        stock: "10",
         image: "/img/ficus-rubi.JPG",
         category: "plantas"
     },

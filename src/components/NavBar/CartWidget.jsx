@@ -1,13 +1,19 @@
+import { useContext } from "react";
+import { cartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 import cart from "../../assets/navbar/cart.svg"
 import "./cartwidget.css"; 
 
 
-export const CartWidget = () => {
-    const itemCount = 0; // Valor estático para la notificación. Provisional hasta proximas entregas
+const CartWidget = () => {
+  const {totalQuantity} = useContext(cartContext) 
+
   return (
-    <div className="cart-container">
+    <Link to="/cart"  className="cart-container">
       <img src={cart} alt="Cart" className="cart-icon" />
-      {itemCount >= 0 && <div className="notification-bubble">{itemCount}</div>}
-    </div>
+      <p className="notification-bubble">{totalQuantity()}</p>
+    </Link>
   )
 }
+
+export default CartWidget
