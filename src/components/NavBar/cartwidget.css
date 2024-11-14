@@ -11,14 +11,10 @@
 .notification-bubble {
     position: absolute; 
     bottom: -1px; 
-    right: -12px; 
-    background-color: rgba(226, 6, 6, 0.87);
+    right: -10px; 
     color: white; 
-    border-radius: 50%;
-    width: 20px; 
-    height: 20px; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    font-size: 13px; 
+    font-size: 14px; 
 }

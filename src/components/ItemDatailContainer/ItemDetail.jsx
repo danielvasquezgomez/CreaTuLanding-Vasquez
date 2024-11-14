@@ -1,16 +1,20 @@
 import "./itemdetail.css"
 import ItemCount from "../ItemCount/ItemCount"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { cartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
 
 
 const ItemDetail = ({ product }) => {
+
+  const [showItemCount, setShowItemCount] = useState(true)
   const{addProductInCart } = useContext(cartContext)
 
   const addProduct = (count) => {
     const productCart = { ...product, quantity: count }
     
     addProductInCart(productCart)
+    setShowItemCount(false)
   }
 
   return (
@@ -21,7 +25,14 @@ const ItemDetail = ({ product }) => {
         <p className="text-detail">{product.description}</p>
         <p className="text-descrip">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam illum corporis sapiente at, natus tempore beatae voluptatem id sunt? Distinctio dolor voluptas quaerat, vel reiciendis inventore illo nam in porro.</p>
         <p className="text-detail">Precio: ${product.price}</p>
-        <ItemCount initial={0} stock={product.stock} addProduct={addProduct} />
+
+        {
+          showItemCount === true ?
+          (<ItemCount initial={0} stock={product.stock} addProduct={addProduct} />)
+          :
+          (<Link to="/cart">Terminar mi compra</Link>)
+        }
+        
       </div>
 
       

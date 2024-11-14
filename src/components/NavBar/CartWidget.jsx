@@ -8,10 +8,12 @@ import "./cartwidget.css";
 const CartWidget = () => {
   const {totalQuantity} = useContext(cartContext) 
 
+  const total = totalQuantity()
+
   return (
     <Link to="/cart"  className="cart-container">
       <img src={cart} alt="Cart" className="cart-icon" />
-      <p className="notification-bubble">{totalQuantity()}</p>
+      <p className="notification-bubble">{total >= 1 && total}</p>
     </Link>
   )
 }
