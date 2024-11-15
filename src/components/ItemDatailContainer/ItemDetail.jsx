@@ -23,7 +23,6 @@ const ItemDetail = ({ product }) => {
       <div className="text-detail-container">
         <h2 className="title-detail">{product.name}</h2>
         <p className="text-detail">{product.description}</p>
-        <p className="text-descrip">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam illum corporis sapiente at, natus tempore beatae voluptatem id sunt? Distinctio dolor voluptas quaerat, vel reiciendis inventore illo nam in porro.</p>
         <p className="text-detail">Precio: ${product.price}</p>
 
         {

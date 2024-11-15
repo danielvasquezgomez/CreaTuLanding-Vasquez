@@ -2,7 +2,7 @@ const products = [
     {
         id: "plant001",
         name: "Ficus Rubi",
-        description: "",
+        description: "Una planta elegante y de hojas brillantes que aporta frescura y vitalidad a cualquier espacio. Ideal para interiores.",
         price: "35000",
         stock: "10",
         image: "/img/ficus-rubi.JPG",
@@ -11,7 +11,7 @@ const products = [
     {
         id: "plant002",
         name: "Yuca Triple",
-        description: "",
+        description: "Con un aspecto tropical y hojas alargadas, esta planta es perfecta para llenar de estilo moderno tus ambientes.",
         price: "18000",
         stock: "15",
         image: "/img/yuca-triple.JPG",
