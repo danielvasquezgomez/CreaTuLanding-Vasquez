@@ -3,6 +3,9 @@ import { cartContext } from "../../context/CartContext"
 import { Timestamp, collection, addDoc } from "firebase/firestore"
 import db from "../../db/db.js"
 import { Link } from "react-router-dom"
+import validateForm from "../../utils/validateForm.js"
+import { toast } from "react-toastify"
+import "./checkout.css"
 
 
 const Checkout = () => {
@@ -19,7 +22,7 @@ const Checkout = () => {
         setDataForm( {...dataForm, [event.target.name]: event.target.value} )
     }
 
-    const handleSubmitForm = (event) => {
+    const handleSubmitForm = async(event) => {
         event.preventDefault()
 
         const order = {
@@ -28,7 +31,13 @@ const Checkout = () => {
             date: Timestamp.fromDate(new Date()),
             total: totalPrice()
         }
-        uploadOrder(order)
+
+        const response = await validateForm(dataForm)
+        if(response.status === "success"){
+            uploadOrder(order)
+        }else{
+            toast.error(response.message)
+        }
     }
 
     const uploadOrder = (newOrder) =>{
@@ -39,6 +48,7 @@ const Checkout = () => {
             })
             .finally(()=>{
                 deleteCart()
+                toast.success("Orden generada correctamente")
             })
     }
 
@@ -46,16 +56,19 @@ const Checkout = () => {
         <div>
             {
                 idOrder === null? (
-                <form onSubmit={handleSubmitForm}>
+                <div className="formulario">
+                  <form onSubmit={handleSubmitForm}>
                     <input type="text" name="fullname" value={dataForm.fullname} onChange={handleChangeInput} placeholder="Nombre"/>
                     <input type="number" name="phone" value={dataForm.phone} onChange={handleChangeInput} placeholder="Telefono"/>
                     <input type="email" name="email" value={dataForm.email} onChange={handleChangeInput} placeholder="email"/>
                     <button type="submit">Terminar mi compra</button>
-                </form>    
+                </form>  
+                </div>
+                    
                 ) : (
-                    <div>
-                        <h2>Orden generada correctamente!</h2>
-                        <p>Guarde su numero de orden: {idOrder}</p>
+                    <div className="finOrden">
+                        <h2>GRACIAS POR TU COMPRA</h2>
+                        <p>Tu codigo de orden es: {idOrder}</p>
                         <Link to="/">Vovler al inicio</Link>
                     </div>
                 )

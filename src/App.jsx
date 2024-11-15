@@ -7,7 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext.jsx'
 import Cart from './components/Cart/Cart.jsx'
 import Checkout from './components/Checkout/Checkout.jsx'
-
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {  
   return (
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <CartProvider>
         <NavBar />
+        <ToastContainer theme='light'/>
         <Routes>
           <Route path='/' element={<ItemListContainer mensaje="Bienvenido, qué nunca falten plantas en tu vida!" />}/>
           <Route path="/category/:idCategory" element={ <ItemListContainer /> } />
